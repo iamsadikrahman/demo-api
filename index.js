@@ -14,6 +14,8 @@
 
 import express from "express";
 
+const cors = require('cors');
+
 const port = 9000;
 
 
@@ -490,6 +492,9 @@ const data = [
   ]
 
 const app = express();
+
+// Enable CORS for all routes
+app.use(cors());
 
 app.get('/movies', (req, res) => {
   res.json(data);
